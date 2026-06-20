@@ -1,26 +1,285 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── Tokens da marca SAM Soluções Digitais ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fontes */
+  --font-heading: var(--font-jakarta);
+  --font-body: var(--font-inter);
+
+  /* Cores da marca */
+  --color-brand-blue: #2563eb;
+  --color-brand-blue-light: #60a5fa;
+  --color-brand-graphite: #1e1e1e;
+  --color-brand-emerald: #10b981;
+
+  /* Escala de UI */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+  --color-text-primary: #1e1e1e;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #9ca3af;
+
+  /* Border radius */
+  --radius-card: 1rem; /* 16px */
+  --radius-btn: 0.75rem; /* 12px */
+  --radius-badge: 9999px; /* pill  */
+
+  /* Sombras */
+  --shadow-card:
+    0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-card-hover:
+    0 10px 25px -5px rgb(37 99 235 / 0.08), 0 4px 6px -2px rgb(37 99 235 / 0.04);
+  --shadow-btn-primary: 0 4px 14px 0 rgb(37 99 235 / 0.25);
+  --shadow-btn-whatsapp: 0 4px 14px 0 rgb(16 185 129 / 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  Dark mode futuro por preferência do sistema.
+
+  Quando quiser ativar, basta descomentar este bloco.
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-surface: #0f172a;
+      --color-surface-alt: #1e293b;
+      --color-border: #334155;
+      --color-border-strong: #475569;
+      --color-text-primary: #f1f5f9;
+      --color-text-secondary: #94a3b8;
+      --color-text-muted: #64748b;
+    }
   }
+*/
+
+/* ─── Reset e base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  line-height: 1.625;
+  min-height: 100dvh;
+}
+
+/* ─── Seleção de texto ─── */
+::selection {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/*
+  Seleção de texto para dark mode futuro.
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background-color: #1e3a8a;
+      color: #bfdbfe;
+    }
+  }
+*/
+
+/* ─── Foco acessível ─── */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Scrollbar customizada ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-strong);
+  border-radius: 9999px;
+}
+
+/* ─── Animações suaves da Hero ─── */
+@keyframes sam-glow-float-primary {
+  0% {
+    transform: translate3d(-90px, -50px, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(150px, 60px, 0) scale(1.15);
+  }
+
+  50% {
+    transform: translate3d(260px, 160px, 0) scale(1.25);
+  }
+
+  75% {
+    transform: translate3d(100px, 240px, 0) scale(1.12);
+  }
+
+  100% {
+    transform: translate3d(-40px, 100px, 0) scale(1.18);
+  }
+}
+
+@keyframes sam-glow-float-secondary {
+  0% {
+    transform: translate3d(80px, 50px, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(-150px, -70px, 0) scale(1.14);
+  }
+
+  50% {
+    transform: translate3d(-270px, -150px, 0) scale(1.22);
+  }
+
+  75% {
+    transform: translate3d(-110px, -240px, 0) scale(1.12);
+  }
+
+  100% {
+    transform: translate3d(40px, -100px, 0) scale(1.18);
+  }
+}
+
+@keyframes sam-glow-pulse-center {
+  0% {
+    opacity: 0.18;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 0.32;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0.22;
+    transform: scale(1);
+  }
+}
+
+.sam-glow-primary {
+  animation: sam-glow-float-primary 11s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.sam-glow-secondary {
+  animation: sam-glow-float-secondary 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.sam-glow-center {
+  animation: sam-glow-pulse-center 7s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+/* ─── Animações de entrada premium ─── */
+@keyframes sam-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes sam-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes sam-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.sam-animate-fade-up {
+  opacity: 0;
+  animation: sam-fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.sam-animate-fade-down {
+  opacity: 0;
+  animation: sam-fade-down 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.sam-animate-fade-in {
+  opacity: 0;
+  animation: sam-fade-in 0.75s ease-out forwards;
+}
+
+.sam-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.sam-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.sam-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.sam-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.sam-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.sam-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.sam-delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* ─── Respeitar preferência de animação reduzida ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
