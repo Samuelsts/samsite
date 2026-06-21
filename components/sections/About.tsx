@@ -105,7 +105,7 @@ function Reveal({ children, className, delay = '0ms' }: RevealProps) {
 function ProfileVisual() {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-[0_24px_90px_rgba(15,23,42,0.10)]">
+      <div className="relative overflow-hidden rounded-4xl border border-slate-200 bg-white p-4 shadow-[0_24px_90px_rgba(15,23,42,0.10)]">
         <div className="relative aspect-[4/3.35] overflow-hidden rounded-[1.5rem] bg-slate-950 sm:aspect-[4/4.85]">
           {PROFILE_IMAGE ? (
             <Image
@@ -134,7 +134,7 @@ function ProfileVisual() {
               />
 
               <div className="relative z-10">
-                <div className="inline-flex h-13 w-13 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-blue-200 backdrop-blur-xl sm:h-14 sm:w-14">
+                <div className="inline-flex h-4 w-4 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-blue-200 backdrop-blur-xl sm:h-13 sm:w-13">
                   <Cpu size={22} strokeWidth={1.8} />
                 </div>
 
@@ -142,17 +142,17 @@ function ProfileVisual() {
                   SAM Soluções Digitais
                 </p>
 
-                <h3 className="mt-3 max-w-[18rem] font-heading text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl">
+                <h3 className="mt-3 max-w-[18rem] font-heading text-lg font-extrabold leading-tight tracking-tight sm:text-3xl md:text-xl">
                   Tecnologia aplicada ao crescimento do seu negócio.
                 </h3>
               </div>
 
               {/* Oculto no mobile para evitar corte */}
-              <div className="relative z-10 hidden gap-3 sm:grid">
+              <div className="relative z-10 hidden gap-3 sm:grid md:gap-2">
                 {highlights.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 backdrop-blur-xl"
+                    className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 backdrop-blur-xl"
                   >
                     <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/40">
                       {item.label}

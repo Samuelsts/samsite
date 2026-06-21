@@ -7,7 +7,6 @@ import {
   ArrowRight,
   BadgeCheck,
   BarChart3,
-  ExternalLink,
   LayoutDashboard,
   PanelsTopLeft,
 } from 'lucide-react';
@@ -22,7 +21,6 @@ const projects = [
     status: 'Em desenvolvimento',
     description:
       'Sistema para acompanhar sessões realizadas, faltas, confirmações e saldo de atendimentos de pacientes.',
-    result: 'Mais controle para recepção, paciente e gestão.',
     icon: PanelsTopLeft,
     tags: ['Next.js', 'Controle interno', 'Saúde'],
     image: null,
@@ -34,7 +32,6 @@ const projects = [
     status: 'Finalizado',
     description:
       'Controle automatizado para registrar deslocamentos, calcular saldo e organizar prestação de contas.',
-    result: 'Menos trabalho manual e mais clareza financeira.',
     icon: BarChart3,
     tags: ['Google Sheets', 'Apps Script', 'Automação'],
     image: null,
@@ -46,7 +43,6 @@ const projects = [
     status: 'Em desenvolvimento',
     description:
       'Página institucional premium para apresentar serviços digitais, automações e soluções sob demanda.',
-    result: 'Comunicação mais clara e posicionamento profissional.',
     icon: LayoutDashboard,
     tags: ['Next.js', 'TailwindCSS', 'UI/UX'],
     image: null,
@@ -59,7 +55,6 @@ type Project = {
   category: string;
   status: string;
   description: string;
-  result: string;
   icon: ElementType;
   tags: string[];
   image: string | null;
@@ -255,12 +250,6 @@ function ProjectCard({ project }: { project: Project }) {
               : 'md:max-h-[18rem] md:opacity-100',
           )}
         >
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-sm font-medium leading-relaxed text-slate-700">
-              {project.result}
-            </p>
-          </div>
-
           <div className="mt-6 flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
@@ -291,11 +280,6 @@ function ProjectCard({ project }: { project: Project }) {
               <ArrowRight size={16} />
             </a>
 
-            <ExternalLink
-              size={16}
-              className="text-slate-400 transition-colors hover:text-brand-blue"
-              aria-hidden="true"
-            />
           </div>
         </div>
       </div>
@@ -338,13 +322,6 @@ export function Projects() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay="150ms" className="mt-14 text-center">
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-500">
-            Esta área será atualizada com novos projetos, estudos de caso e
-            soluções desenvolvidas para cenários reais.
-          </p>
-        </Reveal>
       </Container>
     </section>
   );

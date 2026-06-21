@@ -18,17 +18,17 @@ const EMAIL = 'seuemail@exemplo.com'; // ← substitua pelo seu e-mail
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com/seuusuario',
+    href: 'https://instagram.com/samlabs.br',
     icon: '/icons/social/instagram.svg',
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/seuusuario',
+    href: 'https://linkedin.com/in/sjesussantos',
     icon: '/icons/social/linkedin.svg',
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/seuusuario',
+    href: 'https://github.com/Samuelsts',
     icon: '/icons/social/github.svg',
   },
 ];

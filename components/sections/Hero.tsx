@@ -1,12 +1,12 @@
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+// import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 
 const WHATSAPP_NUMBER = '5575998455810'; // ← mesmo número do Header
 const WHATSAPP_MESSAGE = encodeURIComponent(
   'Olá! Vim pelo site e gostaria de conversar.',
 );
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+// const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 export function Hero() {
   return (
@@ -18,25 +18,25 @@ export function Hero() {
       {/* Grade geométrica maior */}
       <div
         aria-hidden="true"
-        className="sam-animate-fade-in sam-delay-100 pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:10rem_10rem]"
+        className="sam-animate-fade-in sam-delay-100 pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)]"
       />
 
       {/* Glow superior esquerdo animado */}
       <div
         aria-hidden="true"
-        className="sam-glow-primary pointer-events-none absolute -left-44 -top-36 h-[38rem] w-[38rem] rounded-full bg-blue-600/50 blur-[58px]"
+        className="sam-glow-primary pointer-events-none absolute -left-44 -top-36 h-152 w-152 rounded-full bg-blue-600/50 blur-[58px]"
       />
 
       {/* Glow inferior direito animado */}
       <div
         aria-hidden="true"
-        className="sam-glow-secondary pointer-events-none absolute -bottom-48 right-0 h-[40rem] w-[40rem] rounded-full bg-violet-600/45 blur-[64px]"
+        className="sam-glow-secondary pointer-events-none absolute -bottom-48 right-0 h-160 w-160 rounded-full bg-violet-600/45 blur-3xl"
       />
 
       {/* Glow central sutil */}
       <div
         aria-hidden="true"
-        className="sam-glow-center pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/20 blur-[85px]"
+        className="sam-glow-center pointer-events-none absolute left-1/2 top-1/2 h-120 w-120 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/20 blur-[85px]"
       />
 
       {/* Vinheta para suavizar a grade e dar profundidade */}
