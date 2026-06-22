@@ -31,17 +31,17 @@ const legalLinks = [
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com/seuusuario',
+    href: 'https://instagram.com/samlabs.br',
     icon: '/icons/social/instagram.svg',
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/seuusuario',
+    href: 'https://linkedin.com/in/sjesussantos',
     icon: '/icons/social/linkedin.svg',
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/seuusuario',
+    href: 'https://github.com/Samuelsts',
     icon: '/icons/social/github.svg',
   },
 ];
@@ -146,7 +146,7 @@ export function Footer() {
                     <MessageCircle size={16} />
                     Falar no WhatsApp
                   </a>
-{/* 
+                  {/* 
                   <a
                     href={`mailto:${EMAIL}`}
                     className="inline-flex h-11 items-center justify-center gap-2 rounded-[--radius-btn] border border-white/10 bg-white/[0.03] px-5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
