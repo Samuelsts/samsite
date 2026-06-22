@@ -18,45 +18,102 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'SAM Soluções Digitais',
+  metadataBase: new URL("https://www.samlabs.com.br"),
+
+  title: {
+    default: "SAM Labs | Desenvolvimento Web e Soluções Digitais",
+    template: "%s | SAM Labs",
+  },
+
   description:
-    'Automação, dashboards, sistemas e consultoria digital para negócios crescerem com tecnologia prática e eficiente.',
+    "Desenvolvimento de sites, landing pages, automações, dashboards e soluções digitais para empresas e profissionais.",
+
+  keywords: [
+    "desenvolvimento web",
+    "sites profissionais",
+    "landing page",
+    "automação",
+    "dashboard",
+    "nextjs",
+    "react",
+    "sistemas web",
+    "SAM Labs",
+    "Soluções Digitais"
+  ],
+
+  authors: [
+    {
+      name: "Samuel",
+    },
+  ],
+
+  creator: "Samuel",
+
+  alternates: {
+    canonical: "https://www.samlabs.com.br",
+  },
+
+  openGraph: {
+    title: "SAM Labs | Desenvolvimento Web e Soluções Digitais",
+    description:
+      "Sites, landing pages, automações e soluções digitais para empresas e profissionais.",
+
+    url: "https://www.samlabs.com.br",
+
+    siteName: "SAM Labs",
+
+    locale: "pt_BR",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SAM Labs",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "SAM Labs",
+    description:
+      "Desenvolvimento Web, Automações e Soluções Digitais.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 
   icons: {
     icon: [
       {
-        url: '/favicon_io/favicon.ico',
+        url: "/favicon_io/favicon.ico",
       },
       {
-        url: '/favicon_io/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
+        url: "/favicon_io/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
       },
       {
-        url: '/favicon_io/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
+        url: "/favicon_io/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
       },
     ],
     apple: [
       {
-        url: '/favicon_io/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
+        url: "/favicon_io/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
       },
     ],
-    shortcut: '/favicon_io/favicon.ico',
-  },
-
-  openGraph: {
-    title: 'SAM Soluções Digitais',
-    description: 'Tecnologia aplicada ao crescimento do seu negócio.',
-    siteName: 'SAM Soluções Digitais',
-    locale: 'pt_BR',
-    type: 'website',
   },
 };
-
 export default function RootLayout({
   children,
 }: {
