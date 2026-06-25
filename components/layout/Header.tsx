@@ -83,9 +83,10 @@ export function Header() {
               src="/logofinalbranco.svg"
               alt="SAM Soluções Digitais"
               width={104}
-              height={32}
+              height={24}
               priority
               className="h-5 w-auto object-contain md:h-6"
+              style={{ height: 'auto' }}
             />
           </a>
 

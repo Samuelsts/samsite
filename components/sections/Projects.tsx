@@ -16,36 +16,36 @@ import { cn } from '@/lib/utils';
 
 const projects = [
   {
-    title: 'Controle de Sessões para Clínicas',
+    title: 'Auto Value',
     category: 'Sistema sob demanda',
-    status: 'Em desenvolvimento',
+    status: 'Finalizado',
     description:
-      'Sistema para acompanhar sessões realizadas, faltas, confirmações e saldo de atendimentos de pacientes.',
-    icon: PanelsTopLeft,
-    tags: ['Next.js', 'Controle interno', 'Saúde'],
-    image: null,
-    href: '#',
+      'AutoValue é um sistema de gestão veicular que centraliza custos, receitas, quilometragem e manutenção para avaliar a rentabilidade real do veículo.',
+    icon: LayoutDashboard,
+    tags: ['Next.js', 'Controle interno', 'Financeiro'],
+    image: '/projects/autovalue.webp',
+    href: 'https://github.com/Samuelsts/autovalue',
   },
   {
-    title: 'Dashboard de Gastos com Deslocamento',
+    title: 'Painel de Gastos com Deslocamento',
     category: 'Automação e relatórios',
     status: 'Finalizado',
     description:
       'Controle automatizado para registrar deslocamentos, calcular saldo e organizar prestação de contas.',
-    icon: BarChart3,
+    icon: PanelsTopLeft,
     tags: ['Google Sheets', 'Apps Script', 'Automação'],
-    image: null,
+    image: '/projects/appscript.webp',
     href: '#',
   },
   {
-    title: 'Landing Page SAM Soluções Digitais',
-    category: 'Presença digital',
-    status: 'Em desenvolvimento',
+    title: 'Portal de Tutoriais',
+    category: 'Tutoriais',
+    status: 'Finalizado',
     description:
-      'Página institucional premium para apresentar serviços digitais, automações e soluções sob demanda.',
+      'Biblioteca independente de apoio com tutoriais em vídeo e imagem do sistema Clinic All. ',
     icon: LayoutDashboard,
-    tags: ['Next.js', 'TailwindCSS', 'UI/UX'],
-    image: null,
+    tags: ['Next.js', 'TailwindCSS', 'Tutoriais'],
+    image: '/projects/tutorial.webp',
     href: '#',
   },
 ];
@@ -274,12 +274,12 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="flex items-center justify-between">
             <a
               href={project.href}
+              target="_blank"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition-colors hover:text-brand-blue"
             >
               Ver detalhes
               <ArrowRight size={16} />
             </a>
-
           </div>
         </div>
       </div>
