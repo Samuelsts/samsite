@@ -3,7 +3,6 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import CookieBanner from '@/components/legal/CookieBanner';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -126,7 +125,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${jakarta.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
         <CookieBanner />
-        <GoogleAnalytics gaId="G-9BZGTDSKLY" />
       </body>
     </html>
   );

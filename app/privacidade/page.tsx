@@ -1,14 +1,61 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
-import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/ui/Container';
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade | SAM Soluções Digitais',
+  title: "Política de Privacidade | SAM Soluções Digitais",
   description:
-    'Política de Privacidade da SAM Soluções Digitais sobre coleta, uso e proteção de dados pessoais.',
+    "Política de Privacidade da SAM Soluções Digitais sobre coleta, uso e proteção de dados pessoais.",
 };
+
+const sections = [
+  {
+    title: "1. Quem somos (controlador)",
+    body: "Este site, disponível em samlabs.com.br, é mantido por Samuel J. Santos, sob o nome SAM Soluções Digitais, que atua como controlador dos dados descritos nesta política. Contato: contatosam.info@gmail.com ou WhatsApp, pelos links do site.",
+  },
+  {
+    title: "2. Dados que tratamos",
+    body: "O site não tem cadastro, login nem formulários. Tratamos: (a) dados técnicos de acesso (endereço IP, navegador, sistema operacional, páginas visitadas e horário), registrados pela hospedagem e pela infraestrutura de rede para operação e segurança do site (base legal: legítimo interesse, art. 7º, IX, da LGPD); (b) as informações que você enviar ao nos chamar pelo WhatsApp, usadas para responder e preparar uma proposta, a seu pedido (art. 7º, V); e (c) dados de medição de audiência, descritos abaixo, somente se você aceitar.",
+  },
+  {
+    title: "3. Medição de audiência (Google Analytics)",
+    body: 'Usamos o Google Analytics para entender como o site é usado, como páginas visitadas, tempo de visita e tipo de dispositivo. Ele só é carregado se você aceitar no banner de cookies (base legal: consentimento, art. 7º, I). Antes da sua escolha, e se você recusar, nenhum script de medição é executado. Você pode mudar de ideia a qualquer momento em "Preferências de cookies", no rodapé. Se passarmos a usar outras ferramentas, atualizaremos esta política e pediremos sua escolha novamente.',
+  },
+  {
+    title: "4. Cookies",
+    body: "O site não cria cookies próprios para funcionar. Se você aceitar a medição, o Google Analytics define cookies como _ga e _ga_*. A sua escolha fica registrada no armazenamento local do navegador (localStorage), sem envio a servidores. Mais detalhes na Política de Cookies. Você também pode bloquear ou apagar cookies nas configurações do navegador.",
+  },
+  {
+    title: "5. Links para terceiros",
+    body: "O site contém links para WhatsApp, Instagram, LinkedIn, GitHub e outros serviços. Ao acessá-los, valem as políticas de privacidade e os termos dessas plataformas, que a SAM não controla.",
+  },
+  {
+    title: "6. Compartilhamento e transferência internacional",
+    body: "Não vendemos dados nem os repassamos a terceiros por iniciativa própria. Os dados técnicos chegam à hospedagem e à infraestrutura de rede e, se você aceitar a medição, ao Google, que podem processá-los fora do Brasil, conforme suas próprias políticas e salvaguardas (art. 33 da LGPD). Também poderá haver compartilhamento por obrigação legal ou ordem judicial, ou para proteção dos direitos da SAM.",
+  },
+  {
+    title: "7. Segurança",
+    body: "Adotamos medidas técnicas e organizacionais razoáveis para proteger as informações contra acesso não autorizado, alteração, divulgação ou destruição indevida. Nenhum sistema conectado à internet, porém, garante segurança absoluta.",
+  },
+  {
+    title: "8. Por quanto tempo",
+    body: "O que fica no seu navegador permanece até você limpar os dados do site. Sua escolha sobre cookies é pedida novamente após 12 meses ou quando esta política mudar de forma relevante. As informações enviadas pelo WhatsApp são mantidas pelo tempo necessário para o atendimento e para cumprir obrigações legais. Os dados tratados por serviços de terceiros seguem a configuração e as políticas de cada um.",
+  },
+  {
+    title: "9. Seus direitos (LGPD)",
+    body: "Nos termos do art. 18 da Lei 13.709/2018, você pode pedir confirmação do tratamento, acesso, correção, anonimização, eliminação, portabilidade, informação sobre compartilhamento e revogação do consentimento. Escreva para contatosam.info@gmail.com; respondemos em até 15 dias. Para dados mantidos pelo Google ou por outros serviços, o pedido também deve ser feito diretamente a eles. Você pode ainda apresentar reclamação à ANPD (gov.br/anpd).",
+  },
+  {
+    title: "10. Encarregado (DPO)",
+    body: "Por ser um negócio de pequeno porte, o e-mail contatosam.info@gmail.com é o canal de comunicação do titular de dados.",
+  },
+  {
+    title: "11. Alterações desta política",
+    body: "Se houver mudança relevante, atualizaremos a data de revisão acima e, quando a mudança afetar cookies ou medição, pediremos a sua escolha novamente no banner.",
+  },
+];
 
 export default function PrivacyPage() {
   return (
@@ -32,176 +79,18 @@ export default function PrivacyPage() {
             </h1>
 
             <p className="mt-5 text-sm text-text-secondary">
-              Última atualização: 18 de junho de 2026
+              Última atualização: 17 de outubro de 2026
             </p>
 
             <div className="mt-8 space-y-8 text-base leading-relaxed text-text-secondary">
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  1. Introdução
-                </h2>
-                <p className="mt-3">
-                  Bem-vindo ao site da SAM. A sua privacidade é importante. Esta
-                  Política de Privacidade descreve como informações podem ser
-                  coletadas, utilizadas e protegidas durante a navegação em
-                  nosso site. Ao acessar este site, você concorda com os termos
-                  descritos nesta política.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  2. Quem somos
-                </h2>
-                <p className="mt-3">
-                  A SAM é uma iniciativa independente voltada para tecnologia,
-                  desenvolvimento web, automação, suporte técnico e criação de
-                  soluções digitais. Site oficial: <strong>samlabs.com.br</strong> <br/>Contato:
-                  WhatsApp disponível através dos links presentes no site.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  3. Informações coletadas
-                </h2>
-                <p className="mt-3">
-                  Atualmente, este site não solicita cadastro de usuários, não
-                  possui área de login e não realiza coleta direta de dados
-                  pessoais por meio de formulários. Entretanto, algumas
-                  informações técnicas podem ser registradas automaticamente
-                  durante a navegação, incluindo: Endereço IP Tipo de navegador
-                  Sistema operacional Data e hora de acesso Páginas visitadas
-                  Informações de desempenho e segurança Esses dados podem ser
-                  coletados por provedores de hospedagem, redes de distribuição
-                  de conteúdo (CDNs) e ferramentas de análise utilizadas pelo
-                  site.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  4. Ferramentas de análise e monitoramento
-                </h2>
-                <p className="mt-3">
-                  Para melhorar a experiência dos visitantes e compreender o uso
-                  do site, a SAM poderá utilizar ferramentas de análise e
-                  monitoramento, incluindo, mas não se limitando a: Google
-                  Analytics Google Tag Manager Microsoft Clarity Meta Pixel
-                  Essas ferramentas podem coletar informações estatísticas e
-                  comportamentais de forma automatizada para fins de análise,
-                  desempenho, marketing e melhoria contínua dos serviços.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  5. Cookies
-                </h2>
-                <p className="mt-3">
-                  Este site poderá utilizar cookies e tecnologias semelhantes
-                  para: Garantir o funcionamento adequado do site; Melhorar a
-                  experiência de navegação; Analisar métricas de acesso; Medir
-                  desempenho de campanhas e conteúdos. O usuário pode configurar
-                  seu navegador para bloquear ou remover cookies a qualquer
-                  momento. O bloqueio de determinados cookies pode afetar
-                  parcialmente algumas funcionalidades do site.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  6. Links para terceiros
-                </h2>
-                <p className="mt-3">
-                  O site contém links para plataformas externas, incluindo:
-                  WhatsApp Instagram LinkedIn GitHub Ao acessar qualquer serviço
-                  externo, o usuário estará sujeito às respectivas políticas de
-                  privacidade e termos de uso dessas plataformas. A SAM não
-                  possui controle sobre as práticas de privacidade adotadas por
-                  terceiros.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  7. Compartilhamento de informações
-                </h2>
-                <p className="mt-3">
-                  A SAM não comercializa, aluga ou compartilha dados pessoais de
-                  visitantes com terceiros para fins comerciais. Informações
-                  eventualmente coletadas poderão ser compartilhadas apenas
-                  quando: Exigido por obrigação legal; Necessário para
-                  cumprimento de ordem judicial; Necessário para proteção dos
-                  direitos da SAM; Necessário para operação técnica do site por
-                  provedores de hospedagem e infraestrutura.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  8. Segurança das informações
-                </h2>
-                <p className="mt-3">
-                  São adotadas medidas técnicas e organizacionais razoáveis para
-                  proteger as informações processadas pelo site contra acesso
-                  não autorizado, alteração, divulgação ou destruição indevida.
-                  Apesar dos esforços empregados, nenhum sistema conectado à
-                  internet pode garantir segurança absoluta.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  9. Direitos dos titulares de dados
-                </h2>
-                <p className="mt-3">
-                  Nos termos da Lei Geral de Proteção de Dados (Lei nº
-                  13.709/2018 – LGPD), o titular dos dados possui direitos
-                  relacionados ao tratamento de suas informações pessoais,
-                  incluindo: Confirmação da existência de tratamento; Acesso aos
-                  dados; Correção de dados incompletos ou desatualizados;
-                  Solicitação de exclusão quando aplicável; Informações sobre
-                  compartilhamento de dados; Revogação de consentimento quando
-                  cabível. Solicitações podem ser realizadas por meio dos canais
-                  de contato disponibilizados no site.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  10. Armazenamento e retenção
-                </h2>
-                <p className="mt-3">
-                  Os dados eventualmente coletados serão mantidos apenas pelo
-                  período necessário para cumprir as finalidades descritas nesta
-                  política, obrigações legais ou requisitos operacionais
-                  legítimos.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  11. Alterações desta política
-                </h2>
-                <p className="mt-3">
-                  Esta Política de Privacidade poderá ser atualizada
-                  periodicamente para refletir mudanças legais, operacionais ou
-                  tecnológicas. A versão mais recente estará sempre disponível
-                  nesta página.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  12. Contato
-                </h2>
-                <p className="mt-3">
-                  Em caso de dúvidas relacionadas a esta Política de Privacidade
-                  ou ao tratamento de dados pessoais, entre em contato através
-                  dos canais oficiais disponibilizados em: samlabs.com.br
-                </p>
-              </section>
+              {sections.map((section) => (
+                <section key={section.title}>
+                  <h2 className="font-heading text-xl font-semibold text-text-primary">
+                    {section.title}
+                  </h2>
+                  <p className="mt-3">{section.body}</p>
+                </section>
+              ))}
             </div>
           </article>
         </Container>

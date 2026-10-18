@@ -1,48 +1,48 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
-import { ArrowUpRight, Mail, MessageCircle } from 'lucide-react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
-import { Container } from '@/components/ui/Container';
-import { cn } from '@/lib/utils';
+import { Container } from "@/components/ui/Container";
+import { cn } from "@/lib/utils";
 
-const WHATSAPP_NUMBER = '5575998455810'; // ← substitua pelo seu número
+const WHATSAPP_NUMBER = "5575998455810"; // ← substitua pelo seu número
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Olá! Vim pelo site da SAM e gostaria de conversar sobre uma solução digital.',
+  "Olá! Vim pelo site da SAM e gostaria de conversar sobre uma solução digital.",
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-const EMAIL = 'seuemail@exemplo.com'; // ← substitua pelo seu e-mail
+const EMAIL = "seuemail@exemplo.com"; // ← substitua pelo seu e-mail
 
 const footerLinks = [
-  { label: 'Serviços', href: '/#servicos' },
-  { label: 'Projetos', href: '/#projetos' },
-  { label: 'Sobre', href: '/#sobre' },
-  { label: 'Contato', href: '/#contato' },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Projetos", href: "/#projetos" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 const legalLinks = [
-  { label: 'Política de Privacidade', href: '/privacidade' },
-  { label: 'Termos de Uso', href: '/termos-de-uso' },
+  { label: "Política de Privacidade", href: "/privacidade" },
+  { label: "Termos de Uso", href: "/termos-de-uso" },
 ];
 
 const socialLinks = [
   {
-    label: 'Instagram',
-    href: 'https://instagram.com/samlabs.br',
-    icon: '/icons/social/instagram.svg',
+    label: "Instagram",
+    href: "https://instagram.com/samlabs.br",
+    icon: "/icons/social/instagram.svg",
   },
   {
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/sjesussantos',
-    icon: '/icons/social/linkedin.svg',
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/sjesussantos",
+    icon: "/icons/social/linkedin.svg",
   },
   {
-    label: 'GitHub',
-    href: 'https://github.com/Samuelsts',
-    icon: '/icons/social/github.svg',
+    label: "GitHub",
+    href: "https://github.com/Samuelsts",
+    icon: "/icons/social/github.svg",
   },
 ];
 
@@ -72,7 +72,7 @@ function useScrollReveal() {
       },
       {
         threshold: 0.12,
-        rootMargin: '0px 0px -80px 0px',
+        rootMargin: "0px 0px -80px 0px",
       },
     );
 
@@ -84,18 +84,18 @@ function useScrollReveal() {
   return { ref, isVisible };
 }
 
-function Reveal({ children, className, delay = '0ms' }: RevealProps) {
+function Reveal({ children, className, delay = "0ms" }: RevealProps) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: isVisible ? delay : '0ms' }}
+      style={{ transitionDelay: isVisible ? delay : "0ms" }}
       className={cn(
-        'transition-all duration-700 ease-out will-change-transform',
+        "transition-all duration-700 ease-out will-change-transform",
         isVisible
-          ? 'translate-y-0 scale-100 opacity-100 blur-0'
-          : 'translate-y-8 scale-[0.98] opacity-0 blur-sm',
+          ? "translate-y-0 scale-100 opacity-100 blur-0"
+          : "translate-y-8 scale-[0.98] opacity-0 blur-sm",
         className,
       )}
     >
@@ -146,14 +146,14 @@ export function Footer() {
                     <MessageCircle size={16} />
                     Falar no WhatsApp
                   </a>
-                  {/* 
+
                   <a
                     href={`mailto:${EMAIL}`}
                     className="inline-flex h-11 items-center justify-center gap-2 rounded-[--radius-btn] border border-white/10 bg-white/[0.03] px-5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
                   >
                     <Mail size={16} />
                     Enviar e-mail
-                  </a> */}
+                  </a>
                 </div>
               </div>
 
@@ -234,6 +234,15 @@ export function Footer() {
                       {link.label}
                     </a>
                   ))}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      window.dispatchEvent(new Event("open-consent"))
+                    }
+                    className="transition-colors hover:text-slate-300"
+                  >
+                    Preferências de cookies
+                  </button>
                 </div>
               </div>
             </div>
