@@ -13,7 +13,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-const EMAIL = 'seuemail@exemplo.com'; // ← substitua pelo seu e-mail
+const EMAIL = 'contatosam.info@gmail.com'; // ← substitua pelo seu e-mail
 
 const socialLinks = [
   {
@@ -152,13 +152,13 @@ export function Contact() {
                       <ArrowRight size={16} />
                     </a>
 
-                    {/* <a
+                    <a
                       href={`mailto:${EMAIL}`}
                       className="inline-flex h-12 items-center justify-center gap-2 rounded-[--radius-btn] border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:text-brand-blue"
                     >
                       Enviar e-mail
                       <Mail size={16} />
-                    </a> */}
+                    </a>
                   </div>
                 </div>
 

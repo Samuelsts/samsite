@@ -1,52 +1,52 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-import type { ElementType, ReactNode } from 'react';
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import type { ElementType, ReactNode } from "react";
 import {
   ArrowRight,
   BadgeCheck,
   BarChart3,
   LayoutDashboard,
   PanelsTopLeft,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { Container } from '@/components/ui/Container';
-import { cn } from '@/lib/utils';
+import { Container } from "@/components/ui/Container";
+import { cn } from "@/lib/utils";
 
 const projects = [
   {
-    title: 'Auto Value',
-    category: 'Sistema sob demanda',
-    status: 'Finalizado',
+    title: "Auto Value",
+    category: "Sistema sob demanda",
+    status: "Finalizado",
     description:
-      'AutoValue é um sistema de gestão veicular que centraliza custos, receitas, quilometragem e manutenção para avaliar a rentabilidade real do veículo.',
+      "AutoValue é um sistema de gestão veicular que centraliza custos, receitas, quilometragem e manutenção para avaliar a rentabilidade real do veículo.",
     icon: LayoutDashboard,
-    tags: ['Next.js', 'Controle interno', 'Financeiro'],
-    image: '/projects/autovalue.webp',
-    href: 'https://github.com/Samuelsts/autovalue',
+    tags: ["Next.js", "Controle interno", "Financeiro"],
+    image: "/projects/autovalue.webp",
+    href: "https://github.com/Samuelsts/autovalue",
   },
   {
-    title: 'Painel de Gastos com Deslocamento',
-    category: 'Automação e relatórios',
-    status: 'Finalizado',
+    title: "Painel de Gastos com Deslocamento",
+    category: "Automação e relatórios",
+    status: "Finalizado",
     description:
-      'Controle automatizado para registrar deslocamentos, calcular saldo e organizar prestação de contas.',
+      "Controle automatizado para registrar deslocamentos, calcular saldo e organizar prestação de contas.",
     icon: PanelsTopLeft,
-    tags: ['Google Sheets', 'Apps Script', 'Automação'],
-    image: '/projects/appscript.webp',
-    href: '#',
+    tags: ["Google Sheets", "Apps Script", "Automação"],
+    image: "/projects/appscript.webp",
+    href: "#",
   },
   {
-    title: 'Portal de Tutoriais',
-    category: 'Tutoriais',
-    status: 'Finalizado',
+    title: "Portal de Tutoriais",
+    category: "Tutoriais",
+    status: "Finalizado",
     description:
-      'Biblioteca independente de apoio com tutoriais em vídeo e imagem do sistema Clinic All. ',
+      "Biblioteca independente de apoio com tutoriais em vídeo e imagem do sistema Clinic All. ",
     icon: LayoutDashboard,
-    tags: ['Next.js', 'TailwindCSS', 'Tutoriais'],
-    image: '/projects/tutorial.webp',
-    href: '#',
+    tags: ["Next.js", "TailwindCSS", "Tutoriais"],
+    image: "/projects/tutorial.webp",
+    href: "https://help.samlabs.com.br",
   },
 ];
 
@@ -87,7 +87,7 @@ function useScrollReveal() {
       },
       {
         threshold: 0.12,
-        rootMargin: '0px 0px -80px 0px',
+        rootMargin: "0px 0px -80px 0px",
       },
     );
 
@@ -99,18 +99,18 @@ function useScrollReveal() {
   return { ref, isVisible };
 }
 
-function Reveal({ children, className, delay = '0ms' }: RevealProps) {
+function Reveal({ children, className, delay = "0ms" }: RevealProps) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: isVisible ? delay : '0ms' }}
+      style={{ transitionDelay: isVisible ? delay : "0ms" }}
       className={cn(
-        'transition-all duration-700 ease-out will-change-transform',
+        "transition-all duration-700 ease-out will-change-transform",
         isVisible
-          ? 'translate-y-0 scale-100 opacity-100 blur-0'
-          : 'translate-y-8 scale-[0.98] opacity-0 blur-sm',
+          ? "translate-y-0 scale-100 opacity-100 blur-0"
+          : "translate-y-8 scale-[0.98] opacity-0 blur-sm",
         className,
       )}
     >
@@ -138,8 +138,8 @@ function ProjectImagePlaceholder({
       <div className="relative z-10 flex flex-col items-center text-center">
         <div
           className={cn(
-            'flex h-16 w-16 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-white shadow-[0_24px_80px_rgba(37,99,235,0.22)] backdrop-blur-xl transition-all duration-500',
-            isImageHovered && 'md:-translate-y-1 md:scale-105',
+            "flex h-16 w-16 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-white shadow-[0_24px_80px_rgba(37,99,235,0.22)] backdrop-blur-xl transition-all duration-500",
+            isImageHovered && "md:-translate-y-1 md:scale-105",
           )}
         >
           <Icon size={28} strokeWidth={1.8} />
@@ -178,8 +178,8 @@ function ProjectCard({ project }: { project: Project }) {
         onMouseEnter={handleImageEnter}
         onMouseLeave={handleImageLeave}
         className={cn(
-          'relative h-[18rem] shrink-0 overflow-hidden border-b border-slate-100 bg-slate-100 transition-all duration-700 ease-out md:h-[15rem] md:cursor-pointer',
-          isImageHovered && 'md:h-[70%]',
+          "relative h-[18rem] shrink-0 overflow-hidden border-b border-slate-100 bg-slate-100 transition-all duration-700 ease-out md:h-[15rem] md:cursor-pointer",
+          isImageHovered && "md:h-[70%]",
         )}
       >
         {project.image ? (
@@ -189,8 +189,8 @@ function ProjectCard({ project }: { project: Project }) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className={cn(
-              'object-cover transition-transform duration-700 ease-out',
-              isImageHovered && 'md:scale-105',
+              "object-cover transition-transform duration-700 ease-out",
+              isImageHovered && "md:scale-105",
             )}
           />
         ) : (
@@ -204,8 +204,8 @@ function ProjectCard({ project }: { project: Project }) {
         <div
           aria-hidden="true"
           className={cn(
-            'absolute inset-0 bg-[linear-gradient(to_top,rgba(2,6,23,0.48),transparent_55%)] transition-opacity duration-500',
-            isImageHovered ? 'md:opacity-45' : 'opacity-70',
+            "absolute inset-0 bg-[linear-gradient(to_top,rgba(2,6,23,0.48),transparent_55%)] transition-opacity duration-500",
+            isImageHovered ? "md:opacity-45" : "opacity-70",
           )}
         />
 
@@ -217,8 +217,8 @@ function ProjectCard({ project }: { project: Project }) {
 
         <div
           className={cn(
-            'absolute bottom-5 right-5 z-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white shadow-[0_18px_50px_rgba(2,6,23,0.22)] backdrop-blur-xl transition-all duration-500',
-            isImageHovered && 'md:-translate-y-1 md:scale-105',
+            "absolute bottom-5 right-5 z-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white shadow-[0_18px_50px_rgba(2,6,23,0.22)] backdrop-blur-xl transition-all duration-500",
+            isImageHovered && "md:-translate-y-1 md:scale-105",
           )}
         >
           <Icon size={22} strokeWidth={1.8} />
@@ -244,10 +244,10 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Conteúdo extra: oculto no mobile e some no hover da imagem no desktop */}
         <div
           className={cn(
-            'hidden transition-all duration-500 ease-out md:block',
+            "hidden transition-all duration-500 ease-out md:block",
             isImageHovered
-              ? 'md:pointer-events-none md:mt-0 md:max-h-0 md:overflow-hidden md:opacity-0'
-              : 'md:max-h-[18rem] md:opacity-100',
+              ? "md:pointer-events-none md:mt-0 md:max-h-0 md:overflow-hidden md:opacity-0"
+              : "md:max-h-[18rem] md:opacity-100",
           )}
         >
           <div className="mt-6 flex flex-wrap gap-2">
@@ -265,10 +265,10 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Rodapé */}
         <div
           className={cn(
-            'mt-auto border-t border-slate-100 pt-5 transition-all duration-500',
+            "mt-auto border-t border-slate-100 pt-5 transition-all duration-500",
             isImageHovered
-              ? 'md:pointer-events-none md:max-h-0 md:overflow-hidden md:border-transparent md:pt-0 md:opacity-0'
-              : 'md:max-h-20 md:opacity-100',
+              ? "md:pointer-events-none md:max-h-0 md:overflow-hidden md:border-transparent md:pt-0 md:opacity-0"
+              : "md:max-h-20 md:opacity-100",
           )}
         >
           <div className="flex items-center justify-between">
