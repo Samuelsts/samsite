@@ -17,15 +17,15 @@ const sections = [
   },
   {
     title: "2. Dados que tratamos",
-    body: "O site não tem cadastro, login nem formulários. Tratamos: (a) dados técnicos de acesso (endereço IP, navegador, sistema operacional, páginas visitadas e horário), registrados pela hospedagem e pela infraestrutura de rede para operação e segurança do site (base legal: legítimo interesse, art. 7º, IX, da LGPD); (b) as informações que você enviar ao nos chamar pelo WhatsApp, usadas para responder e preparar uma proposta, a seu pedido (art. 7º, V); e (c) dados de medição de audiência, descritos abaixo: a medição agregada da Cloudflare, que não usa cookies, e a do Google Analytics, somente se você aceitar.",
+    body: "O site não tem cadastro, login nem formulários. Tratamos: (a) dados técnicos de acesso (endereço IP, navegador, sistema operacional, páginas visitadas e horário), registrados pela hospedagem e pela infraestrutura de rede para operação e segurança do site (base legal: legítimo interesse, art. 7º, IX, da LGPD); (b) as informações que você enviar ao nos chamar pelo WhatsApp, usadas para responder e preparar uma proposta, a seu pedido (art. 7º, V); e (c) dados de medição de audiência do Google Analytics, descritos abaixo, somente se você aceitar.",
   },
   {
-    title: "3. Medição de audiência (Cloudflare Web Analytics e Google Analytics)",
-    body: 'Usamos duas ferramentas para entender como o site é usado. (a) Cloudflare Web Analytics: mede, de forma agregada, o número de visitas e as páginas mais acessadas, sem usar cookies nem armazenamento local e sem ser usado para identificar você individualmente. Ele funciona independentemente do banner de cookies, com base em legítimo interesse (art. 7º, IX, da LGPD). (b) Google Analytics: mostra, por exemplo, páginas visitadas, tempo de visita e tipo de dispositivo. Ele só é carregado se você aceitar no banner de cookies (base legal: consentimento, art. 7º, I). Antes da sua escolha, e se você recusar, nenhum script do Google Analytics é executado. Você pode mudar de ideia a qualquer momento em \"Preferências de cookies\", no rodapé. Se passarmos a usar outras ferramentas, atualizaremos esta política e, quando necessário, pediremos sua escolha novamente.',
+    title: "3. Medição de audiência (Google Analytics)",
+    body: "Usamos o Google Analytics para entender como o site é usado, como páginas visitadas, tempo de visita e tipo de dispositivo. Ele só é carregado se você aceitar no banner de cookies (base legal: consentimento, art. 7º, I). Antes da sua escolha, e se você recusar, nenhum script de medição é executado. Você pode mudar de ideia a qualquer momento em “Preferências de cookies”, no rodapé. Se passarmos a usar outras ferramentas, atualizaremos esta política e, quando necessário, pediremos sua escolha novamente.",
   },
   {
     title: "4. Cookies",
-    body: "O site não cria cookies próprios para funcionar, e o Cloudflare Web Analytics não usa cookies. Se você aceitar a medição, o Google Analytics define cookies como _ga e _ga_*. A sua escolha fica registrada no armazenamento local do navegador (localStorage), sem envio a servidores. Mais detalhes na Política de Cookies. Você também pode bloquear ou apagar cookies nas configurações do navegador.",
+    body: "O site não cria cookies próprios para funcionar. Se você aceitar a medição, o Google Analytics define cookies como _ga e _ga_*. A sua escolha fica registrada no armazenamento local do navegador (localStorage), sem envio a servidores. Mais detalhes na Política de Cookies. Você também pode bloquear ou apagar cookies nas configurações do navegador.",
   },
   {
     title: "5. Links para terceiros",
@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: "6. Compartilhamento e transferência internacional",
-    body: "Os dados técnicos e a medição agregada chegam à Cloudflare (hospedagem, infraestrutura de rede e Web Analytics) e, se você aceitar a medição, ao Google, que podem processá-los fora do Brasil, conforme suas próprias políticas e salvaguardas (art. 33 da LGPD). Também poderá haver compartilhamento por obrigação legal ou ordem judicial, ou para proteção dos direitos da SAM.",
+    body: "Os dados técnicos chegam à hospedagem e à infraestrutura de rede (Cloudflare) e, se você aceitar a medição, ao Google, que podem processá-los fora do Brasil, conforme suas próprias políticas e salvaguardas (art. 33 da LGPD). Também poderá haver compartilhamento por obrigação legal ou ordem judicial, ou para proteção dos direitos da SAM.",
   },
   {
     title: "7. Segurança",
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
             </h1>
 
             <p className="mt-5 text-sm text-text-secondary">
-              Última atualização: 19 de outubro de 2026
+              Última atualização: 20 de outubro de 2026
             </p>
 
             <div className="mt-8 space-y-8 text-base leading-relaxed text-text-secondary">
