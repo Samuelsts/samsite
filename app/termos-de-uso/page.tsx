@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
-import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/ui/Container';
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: 'Termos de Uso | SAM Soluções Digitais',
+  title: "Termos de Uso | SAM Soluções Digitais",
   description:
-    'Termos de Uso da SAM Soluções Digitais para acesso e utilização do site.',
+    "Termos de Uso da SAM Soluções Digitais para acesso e utilização do site.",
+  alternates: { canonical: "/termos-de-uso" },
 };
 
 export default function TermsPage() {
@@ -41,9 +42,9 @@ export default function TermsPage() {
                   1. Aceitação dos termos
                 </h2>
                 <p className="mt-3">
-                  Ao acessar este site, você concorda com estes Termos de Uso. Se
-                  não concordar com alguma condição, recomendamos que não utilize
-                  o site.
+                  Ao acessar este site, você concorda com estes Termos de Uso.
+                  Se não concordar com alguma condição, recomendamos que não
+                  utilize o site.
                 </p>
               </section>
 
@@ -63,10 +64,10 @@ export default function TermsPage() {
                   3. Propriedade intelectual
                 </h2>
                 <p className="mt-3">
-                  Textos, marcas, elementos visuais, estrutura e demais conteúdos
-                  do site pertencem à SAM Soluções Digitais ou são utilizados com
-                  autorização. A reprodução sem autorização prévia não é
-                  permitida.
+                  Textos, marcas, elementos visuais, estrutura e demais
+                  conteúdos do site pertencem à SAM Soluções Digitais ou são
+                  utilizados com autorização. A reprodução sem autorização
+                  prévia não é permitida.
                 </p>
               </section>
 
@@ -88,8 +89,8 @@ export default function TermsPage() {
                 </h2>
                 <p className="mt-3">
                   O site pode conter links para plataformas externas, como redes
-                  sociais ou canais de atendimento. Não nos responsabilizamos por
-                  conteúdos, políticas ou práticas de terceiros.
+                  sociais ou canais de atendimento. Não nos responsabilizamos
+                  por conteúdos, políticas ou práticas de terceiros.
                 </p>
               </section>
 

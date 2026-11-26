@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Política de Privacidade | SAM Soluções Digitais",
   description:
     "Política de Privacidade da SAM Soluções Digitais sobre coleta, uso e proteção de dados pessoais.",
+  alternates: { canonical: "/privacidade" },
 };
 
 const sections = [

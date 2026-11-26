@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import CookieBanner from "@/components/legal/CookieBanner";
 
+// O manual da marca define só Inter (Semibold e Regular).
+// A fonte variável cobre todos os pesos em um único arquivo.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -24,57 +19,34 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "SAM Labs | Desenvolvimento Web e Soluções Digitais",
-    template: "%s | SAM Labs",
+    default:
+      "SAM Soluções Digitais | Automação de processos e ferramentas sob medida",
+    template: "%s | SAM Soluções Digitais",
   },
 
   description:
-    "Desenvolvimento de sites, landing pages, automações, dashboards e soluções digitais para empresas e profissionais.",
+    "Diagnóstico de processos e ferramentas digitais sob medida para pequenas empresas e profissionais: automações, planilhas inteligentes e pequenos sistemas.",
 
-  keywords: [
-    "desenvolvimento web",
-    "sites profissionais",
-    "landing page",
-    "automação",
-    "dashboard",
-    "nextjs",
-    "react",
-    "sistemas web",
-    "SAM Labs",
-    "Soluções Digitais",
-  ],
+  authors: [{ name: "Samuel J. Santos" }],
+  creator: "Samuel J. Santos",
 
-  authors: [
-    {
-      name: "Samuel",
-    },
-  ],
-
-  creator: "Samuel",
-
-  alternates: {
-    canonical: "https://www.samlabs.com.br",
-  },
-
+  // ATENÇÃO: não definir `alternates.canonical` nem `openGraph.url` aqui.
+  // Esses campos são herdados pelas páginas filhas; um valor global fazia
+  // TODAS as páginas apontarem para a home. Cada página define o seu
+  // (ex.: alternates: { canonical: "/privacidade" }, openGraph: { url: "/privacidade" }).
   openGraph: {
-    title: "SAM Labs | Desenvolvimento Web e Soluções Digitais",
+    title: "SAM Soluções Digitais",
     description:
-      "Sites, landing pages, automações e soluções digitais para empresas e profissionais.",
-
-    url: "https://www.samlabs.com.br",
-
-    siteName: "SAM Labs",
-
+      "Automação de processos e ferramentas digitais sob medida para pequenas empresas e profissionais.",
+    siteName: "SAM Soluções Digitais",
     locale: "pt_BR",
-
     type: "website",
-
     images: [
       {
         url: "https://www.samlabs.com.br/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SAM Labs",
+        alt: "SAM Soluções Digitais",
         type: "image/png",
       },
     ],
@@ -82,8 +54,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "SAM Labs",
-    description: "Desenvolvimento Web, Automações e Soluções Digitais.",
+    title: "SAM Soluções Digitais",
+    description: "Automação de processos e ferramentas digitais sob medida.",
     images: ["/og-image.png"],
   },
 
@@ -125,7 +97,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jakarta.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
         <CookieBanner />
       </body>

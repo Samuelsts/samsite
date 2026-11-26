@@ -1,25 +1,85 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-/* ─── Tokens da marca SAM Soluções Digitais ─── */
+/*
+  Variante `dark:` por classe (next-themes usa attribute="class").
+  Quase não será usada: o tema troca por variáveis CSS (ver docs/DESIGN-TOKENS.md).
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── 1. Valores que MUDAM com o tema ─────────────────────────────
+   Regra: componentes nunca usam cor direta (bg-white, text-slate-950, #hex).
+   Só os tokens semânticos abaixo, via utilitárias (bg-surface, text-text-primary…).
+*/
+:root {
+  color-scheme: light;
+
+  --surface: #ffffff;
+  --surface-alt: #f9fafb;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --text-primary: #1e1e1e;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280; /* 4,8:1 no branco (antes #9ca3af = ~2,5:1) */
+  --accent-text: #2563eb; /* 5,2:1 no branco */
+  --selection-bg: #dbeafe;
+  --selection-fg: #1e40af;
+  --focus-ring: #2563eb;
+}
+
+/*
+  Tema escuro E seções "sempre escuras" (hero, faixa de topo das páginas
+  internas, CTA final, rodapé) usam o mesmo conjunto:
+    - tema escuro do usuário  -> classe .dark no <html> (next-themes)
+    - seção sempre escura     -> atributo data-surface="inverse" no elemento
+  TODO (etapa do Hero): alinhar --surface ao fundo exato do hero atual.
+*/
+.dark,
+[data-surface="inverse"] {
+  color-scheme: dark;
+
+  --surface: #0b1120;
+  --surface-alt: #111a2e;
+  --border: #ffffff1a;
+  --border-strong: #ffffff33;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8; /* ~7:1 no fundo escuro */
+  --accent-text: #60a5fa; /* #2563eb sobre escuro daria ~3,7:1 (reprova p/ texto) */
+  --selection-bg: #1e3a8a;
+  --selection-fg: #bfdbfe;
+  --focus-ring: #60a5fa;
+}
+
+/* Seção sempre escura precisa aplicar o fundo/texto do escopo em que está. */
+[data-surface="inverse"] {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+/* ─── 2. Tokens lidos pelo Tailwind ───────────────────────────────
+   `inline` faz as utilitárias apontarem para var(--surface) etc. (e não para
+   o valor literal), então trocar o tema muda as utilitárias automaticamente.
+*/
 @theme inline {
-  /* Fontes */
-  --font-heading: var(--font-jakarta);
+  /* Fontes: o manual da marca define só Inter */
+  --font-heading: var(--font-inter);
   --font-body: var(--font-inter);
 
-  /* Cores da marca */
+  /* Cores que variam com o tema */
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-text: var(--accent-text);
+
+  /* Cores fixas da marca (iguais nos dois temas) */
   --color-brand-blue: #2563eb;
   --color-brand-blue-light: #60a5fa;
   --color-brand-graphite: #1e1e1e;
-  --color-brand-emerald: #10b981;
-
-  /* Escala de UI */
-  --color-surface: #ffffff;
-  --color-surface-alt: #f9fafb;
-  --color-border: #e5e7eb;
-  --color-border-strong: #d1d5db;
-  --color-text-primary: #1e1e1e;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #9ca3af;
+  --color-brand-emerald: #10b981; /* só como indicador, nunca texto sobre branco */
 
   /* Border radius */
   --radius-card: 1rem; /* 16px */
@@ -34,24 +94,6 @@
   --shadow-btn-primary: 0 4px 14px 0 rgb(37 99 235 / 0.25);
   --shadow-btn-whatsapp: 0 4px 14px 0 rgb(16 185 129 / 0.25);
 }
-
-/*
-  Dark mode futuro por preferência do sistema.
-
-  Quando quiser ativar, basta descomentar este bloco.
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-surface: #0f172a;
-      --color-surface-alt: #1e293b;
-      --color-border: #334155;
-      --color-border-strong: #475569;
-      --color-text-primary: #f1f5f9;
-      --color-text-secondary: #94a3b8;
-      --color-text-muted: #64748b;
-    }
-  }
-*/
 
 /* ─── Reset e base ─── */
 *,
@@ -69,32 +111,21 @@ html {
 
 body {
   font-family: var(--font-body), system-ui, sans-serif;
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
+  background-color: var(--surface);
+  color: var(--text-primary);
   line-height: 1.625;
   min-height: 100dvh;
 }
 
 /* ─── Seleção de texto ─── */
 ::selection {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
 }
-
-/*
-  Seleção de texto para dark mode futuro.
-
-  @media (prefers-color-scheme: dark) {
-    ::selection {
-      background-color: #1e3a8a;
-      color: #bfdbfe;
-    }
-  }
-*/
 
 /* ─── Foco acessível ─── */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -107,11 +138,11 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-border-strong);
+  background-color: var(--border-strong);
   border-radius: 9999px;
 }
 
-/* ─── Animações suaves da Hero ─── */
+/* ─── Luzes do Hero (loop; devem ficar em UM elemento só) ─── */
 @keyframes sam-glow-float-primary {
   0% {
     transform: translate3d(-90px, -50px, 0) scale(1);
@@ -188,18 +219,18 @@ body {
   will-change: transform, opacity;
 }
 
-/* ─── Animações de entrada premium ─── */
+/* ─── Animações de entrada ───
+   Sem `filter: blur`: o blur forçava repintura e atrasava o LCP.
+   NÃO usar em título/parágrafo do hero (é o elemento medido pelo LCP). */
 @keyframes sam-fade-up {
   from {
     opacity: 0;
     transform: translateY(18px);
-    filter: blur(6px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
@@ -207,25 +238,21 @@ body {
   from {
     opacity: 0;
     transform: translateY(-12px);
-    filter: blur(4px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
 @keyframes sam-fade-in {
   from {
     opacity: 0;
-    filter: blur(5px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0);
   }
 }
 

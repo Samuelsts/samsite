@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Política de Cookies | SAM Soluções Digitais",
   description:
     "Saiba quais cookies o site da SAM Soluções Digitais usa, para que servem e como controlá-los.",
+  alternates: { canonical: "/politica-de-cookies" },
 };
 
 export default function PoliticaCookies() {
