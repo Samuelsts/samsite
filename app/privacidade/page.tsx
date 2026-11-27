@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "1. Quem somos (controlador)",
-    body: "Este site, disponível em samlabs.com.br, é mantido por Samuel J. Santos, sob o nome SAM Soluções Digitais, que atua como controlador dos dados descritos nesta política. Contato: NOVO@samlabs.com.br ou WhatsApp, pelos links do site.",
+    body: "Este site, disponível em samlabs.com.br, é mantido por Samuel J. Santos, sob o nome SAM Soluções Digitais, que atua como controlador dos dados descritos nesta política. Contato: contatosam.info@gmail.com ou WhatsApp, pelos links do site.",
   },
   {
     title: "2. Dados que tratamos",
@@ -46,11 +46,11 @@ const sections = [
   },
   {
     title: "9. Seus direitos (LGPD)",
-    body: "Nos termos do art. 18 da Lei 13.709/2018, você pode pedir confirmação do tratamento, acesso, correção, anonimização, eliminação, portabilidade, informação sobre compartilhamento e revogação do consentimento. Escreva para NOVO@samlabs.com.br; respondemos em até 15 dias. Para dados mantidos pelo Google ou por outros serviços, o pedido também deve ser feito diretamente a eles. Você pode ainda apresentar reclamação à ANPD (gov.br/anpd).",
+    body: "Nos termos do art. 18 da Lei 13.709/2018, você pode pedir confirmação do tratamento, acesso, correção, anonimização, eliminação, portabilidade, informação sobre compartilhamento e revogação do consentimento. Escreva para contatosam.info@gmail.com; respondemos em até 15 dias. Para dados mantidos pelo Google ou por outros serviços, o pedido também deve ser feito diretamente a eles. Você pode ainda apresentar reclamação à ANPD (gov.br/anpd).",
   },
   {
     title: "10. Encarregado (DPO)",
-    body: "Por ser um negócio de pequeno porte, o e-mail NOVO@samlabs.com.br é o canal de comunicação do titular de dados.",
+    body: "Por ser um negócio de pequeno porte, o e-mail contatosam.info@gmail.com é o canal de comunicação do titular de dados.",
   },
   {
     title: "11. Alterações desta política",

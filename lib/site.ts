@@ -11,7 +11,7 @@ export const SITE = {
    * Deixe `null` até existir um e-mail real.
    * Com `null`, os botões/links de e-mail não aparecem no site.
    */
-  email: "NOVO@samlabs.com.br" as string | null,
+  email: "contatosam.info@gmail.com" as string | null,
 };
 
 const DEFAULT_WHATSAPP_MESSAGE =
