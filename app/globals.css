@@ -310,3 +310,55 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ─── Órbitas do hero: rotação lenta, só transform (GPU) ─── */
+@keyframes sam-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sam-orbit {
+  animation: sam-orbit linear infinite;
+  will-change: transform;
+}
+
+/* ─── Troca da palavra destaque do hero (CSS puro, ciclo de 12s / 4 palavras) ───
+   Se mudar a quantidade de palavras, ajustar as porcentagens (cada palavra
+   ocupa 1/N do ciclo) e a constante WORD_STEP no Hero.tsx. */
+@keyframes sam-word-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(0.3em);
+  }
+
+  3% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  25% {
+    opacity: 0;
+    transform: translateY(-0.3em);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-0.3em);
+  }
+}
+
+.sam-word {
+  opacity: 0;
+  animation: sam-word-cycle 12s linear infinite;
+}
+
+/* Sem animação (movimento reduzido), a primeira palavra fica visível */
+.sam-word:first-child {
+  opacity: 1;
+}
