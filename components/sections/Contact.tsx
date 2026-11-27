@@ -13,7 +13,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-const EMAIL = 'contatosam.info@gmail.com'; // ← substitua pelo seu e-mail
+const EMAIL = 'NOVO@samlabs.com.br'; // ← substitua pelo seu e-mail
 
 const socialLinks = [
   {
