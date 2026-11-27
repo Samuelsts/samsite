@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/site";
    Só palavras FEMININAS: a frase tem "uma ___ pode fazer por você".
    4 palavras x 3s = ciclo de 12s (igual ao keyframe). Se mudar a quantidade,
    ajustar as porcentagens do keyframe e o animation-duration em .sam-word. */
-const WORDS = ["ferramenta", "automação", "solução", "aplicação"];
+const WORDS = ["ferramenta", "automação", "aplicação", "solução"];
 const WORD_STEP = 3; // segundos que cada palavra ocupa no ciclo
 const WORD_FADE = 0.36; // 3% de 12s: faz a 1ª palavra já nascer visível
 
@@ -75,20 +75,20 @@ export function Hero() {
       {/* Órbitas */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 aspect-square h-[140%] -translate-x-1/2 -translate-y-1/2 md:h-[170%]"
+        className="pointer-events-none absolute left-1/2 top-1/2 aspect-square h-[92%] -translate-x-1/2 -translate-y-1/2 md:h-[170%]"
       >
         <svg viewBox="0 0 1000 1000" fill="none" className="h-full w-full">
           <circle cx="500" cy="500" r="260" className="stroke-border" />
           <circle cx="500" cy="500" r="380" className="stroke-border" />
           <circle cx="500" cy="500" r="490" className="stroke-border" />
 
-          {/* Pontos fixos, sobre os círculos (só celular; em md+ os pontos giram) */}
+          {/* Pontos fixos, sobre os círculos (só celular; em md+ os pontos giram).
+              Posições escolhidas para ficarem dentro da tela estreita. */}
           <g className="md:hidden">
-            <circle cx="240" cy="500" r="5" className="fill-accent-text" />
-            <circle cx="744" cy="589" r="5" className="fill-accent-text" />
-            <circle cx="829" cy="310" r="5" className="fill-accent-text" />
-            <circle cx="143" cy="630" r="5" className="fill-accent-text" />
-            <circle cx="415" cy="983" r="5" className="fill-accent-text" />
+            <circle cx="275" cy="370" r="5" className="fill-accent-text" />
+            <circle cx="725" cy="630" r="5" className="fill-accent-text" />
+            <circle cx="310" cy="171" r="5" className="fill-accent-text" />
+            <circle cx="690" cy="829" r="5" className="fill-accent-text" />
           </g>
         </svg>
 
@@ -129,7 +129,9 @@ export function Hero() {
       <Container className="relative z-10 py-24 md:py-32">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h1 className="font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-text-primary md:text-6xl lg:text-7xl">
-            <span className="block">Pare de repetir o que uma</span>{" "}
+            <span className="block text-balance">
+              Pare de repetir o que uma
+            </span>{" "}
             {/* Palavras empilhadas na MESMA célula: a troca não desloca o layout */}
             <span
               aria-hidden="true"
@@ -149,12 +151,13 @@ export function Hero() {
             </span>
             {/* Leitores de tela e buscadores leem a frase completa */}
             <span className="sr-only">{WORDS[0]}</span>{" "}
-            <span className="block">pode fazer por você.</span>
+            <span className="block text-balance">pode fazer por você.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-text-secondary md:text-xl">
-            Eu mapeio tarefas repetitivas e crio ferramentas sob medida, para
-            pequenas empresas e profissionais.
+            Eu mapeio tarefas repetitivas e crio ferramentas sob medida, de
+            planilhas inteligentes a pequenos sistemas, para pequenas empresas e
+            profissionais.
           </p>
 
           <div className="sam-animate-fade-up sam-delay-300 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
